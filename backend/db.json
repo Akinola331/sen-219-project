@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "id": "mqqw5wvgxgpjt",
+      "username": "sarah_j",
+      "name": "Dr. Sarah Jenkins",
+      "role": "lecturer",
+      "passwordHash": "$2a$10$twKJxLuSFRdUdsmSbn06ZeewP7oQLRVzSJNm2SZKlHZCgrXvymQ7a",
+      "createdAt": "2026-06-23T17:01:35.027Z"
+    },
+    {
+      "id": "mqt4bu4q8pn5y",
+      "username": "akins",
+      "name": "Akinola Joseph",
+      "role": "student",
+      "passwordHash": "$2a$10$XC.LTLhZlUSYSZuwgFPER.vHbuBfIZMNXq0xzUlSmjzfiQcdBI3f.",
+      "createdAt": "2026-06-25T06:25:40.682Z"
+    }
+  ],
+  "documents": [
+    {
+      "id": "mqqwaedhm6ekw",
+      "title": "open source",
+      "description": "",
+      "course": "sen 219",
+      "filename": "1782234304312-Sen219_tutorial_answers_.pdf",
+      "originalName": "Sen219 tutorial answers .pdf",
+      "fileSize": 128803,
+      "uploadedBy": "mqqw5wvgxgpjt",
+      "uploaderName": "Dr. Sarah Jenkins",
+      "downloadCount": 3,
+      "uploadDate": "2026-06-23T17:05:04.325Z"
+    },
+    {
+      "id": "mqqwdwjhh3x22",
+      "title": "data structures",
+      "description": "",
+      "course": "ift 211",
+      "filename": "1782234467789-MTH_201__Maths__Answers.pdf",
+      "originalName": "MTH 201 (Maths) Answers.pdf",
+      "fileSize": 969282,
+      "uploadedBy": "mqqw5wvgxgpjt",
+      "uploaderName": "Dr. Sarah Jenkins",
+      "downloadCount": 1,
+      "uploadDate": "2026-06-23T17:07:47.837Z"
+    }
+  ]
+}
