@@ -104,9 +104,9 @@ function App() {
         padding: '24px',
         color: 'var(--text-muted)',
         fontSize: '13px',
-        borderTop: '1px solid var(--border-color)',
+        borderTop: '2px solid var(--border-color)',
         marginTop: 'auto',
-        background: 'rgba(11, 15, 25, 0.8)'
+        background: '#ffffff'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', marginBottom: '4px' }}>
           <BookOpen size={14} className="text-primary" style={{ color: 'var(--color-primary)' }} />

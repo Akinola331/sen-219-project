@@ -7,9 +7,9 @@ export default function Navbar({ user, onLogout }) {
       position: 'sticky',
       top: 0,
       zIndex: 100,
-      background: 'rgba(11, 15, 25, 0.75)',
-      backdropFilter: 'blur(16px)',
-      borderBottom: '1px solid var(--border-color)',
+      background: '#ffffff',
+      backdropFilter: 'none',
+      borderBottom: '2px solid var(--border-color)',
       padding: '16px 24px'
     }}>
       <div className="container" style={{
@@ -26,13 +26,14 @@ export default function Navbar({ user, onLogout }) {
           cursor: 'pointer'
         }}>
           <div style={{
-            background: 'var(--grad-brand)',
+            background: 'var(--color-secondary)',
             padding: '8px',
-            borderRadius: '10px',
+            borderRadius: 'var(--radius-sm)',
+            border: '2px solid var(--border-color)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 4px 12px rgba(99, 102, 241, 0.25)'
+            boxShadow: 'var(--shadow-sm)'
           }}>
             <BookOpen size={20} color="#fff" />
           </div>
@@ -40,7 +41,7 @@ export default function Navbar({ user, onLogout }) {
             fontSize: '22px',
             fontFamily: 'var(--font-display)',
             fontWeight: 800,
-            background: 'linear-gradient(to right, #ffffff, #a855f7)',
+            background: 'linear-gradient(to right, var(--text-primary), var(--color-primary))',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}>
@@ -58,7 +59,7 @@ export default function Navbar({ user, onLogout }) {
             display: 'flex',
             alignItems: 'center',
             gap: 12,
-            background: 'rgba(255, 255, 255, 0.03)',
+            background: 'rgba(0, 0, 0, 0.02)',
             padding: '6px 14px',
             borderRadius: '30px',
             border: '1px solid var(--border-color)'
@@ -67,11 +68,11 @@ export default function Navbar({ user, onLogout }) {
               width: '28px',
               height: '28px',
               borderRadius: '50%',
-              background: user.role === 'lecturer' ? 'rgba(168, 85, 247, 0.2)' : 'rgba(59, 130, 246, 0.2)',
+              background: user.role === 'lecturer' ? 'rgba(79, 70, 229, 0.1)' : 'rgba(16, 185, 129, 0.1)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: user.role === 'lecturer' ? '#d8b4fe' : '#93c5fd'
+              color: user.role === 'lecturer' ? 'var(--color-primary)' : 'var(--color-success)'
             }}>
               <User size={15} />
             </div>

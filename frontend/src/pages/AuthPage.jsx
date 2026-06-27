@@ -73,18 +73,8 @@ export default function AuthPage({ onLoginSuccess, apiBase }) {
       flex: 1,
       position: 'relative'
     }}>
-      {/* Decorative Glow */}
-      <div style={{
-        position: 'absolute',
-        top: '25%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: '500px',
-        height: '500px',
-        backgroundImage: 'var(--grad-glow)',
-        zIndex: -1,
-        pointerEvents: 'none'
-      }}></div>
+      {/* Decorative Glow - Disabled in V1 */}
+      <div style={{ display: 'none' }}></div>
 
       <div style={{
         width: '100%',
@@ -100,11 +90,12 @@ export default function AuthPage({ onLoginSuccess, apiBase }) {
           alignItems: 'center'
         }}>
           <div style={{
-            background: 'var(--grad-brand)',
+            background: 'var(--color-secondary)',
             padding: '16px',
-            borderRadius: '16px',
+            borderRadius: 'var(--radius-sm)',
+            border: '2px solid var(--border-color)',
             display: 'inline-flex',
-            boxShadow: '0 8px 24px rgba(99, 102, 241, 0.3)',
+            boxShadow: 'var(--shadow-sm)',
             marginBottom: '16px'
           }}>
             <BookOpen size={32} color="#fff" />
@@ -113,7 +104,7 @@ export default function AuthPage({ onLoginSuccess, apiBase }) {
             fontSize: '32px',
             fontFamily: 'var(--font-display)',
             fontWeight: 800,
-            background: 'linear-gradient(to right, #ffffff, #a855f7)',
+            background: 'linear-gradient(to right, var(--text-primary), var(--color-primary))',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             marginBottom: '4px'
@@ -132,11 +123,11 @@ export default function AuthPage({ onLoginSuccess, apiBase }) {
               display: 'flex',
               alignItems: 'center',
               gap: '10px',
-              background: 'rgba(239, 68, 68, 0.12)',
-              border: '1px solid rgba(239, 68, 68, 0.25)',
+              background: 'rgba(239, 68, 68, 0.08)',
+              border: '1px solid rgba(239, 68, 68, 0.18)',
               borderRadius: '10px',
               padding: '12px 16px',
-              color: '#fca5a5',
+              color: 'var(--color-danger)',
               fontSize: '14px',
               marginBottom: '24px'
             }}>
@@ -214,7 +205,7 @@ export default function AuthPage({ onLoginSuccess, apiBase }) {
                       borderRadius: '10px',
                       border: '1px solid',
                       borderColor: role === 'student' ? 'var(--color-primary)' : 'var(--border-color)',
-                      background: role === 'student' ? 'rgba(99, 102, 241, 0.15)' : 'rgba(255, 255, 255, 0.02)',
+                      background: role === 'student' ? 'var(--color-primary)' : 'var(--bg-card)',
                       color: role === 'student' ? '#fff' : 'var(--text-secondary)',
                       cursor: 'pointer',
                       fontWeight: 600,
@@ -230,13 +221,13 @@ export default function AuthPage({ onLoginSuccess, apiBase }) {
                       padding: '12px',
                       borderRadius: '10px',
                       border: '1px solid',
-                      borderColor: role === 'lecturer' ? 'var(--color-secondary)' : 'var(--border-color)',
-                      background: role === 'lecturer' ? 'rgba(168, 85, 247, 0.15)' : 'rgba(255, 255, 255, 0.02)',
+                      borderColor: role === 'lecturer' ? 'var(--color-primary)' : 'var(--border-color)',
+                      background: role === 'lecturer' ? 'var(--color-primary)' : 'var(--bg-card)',
                       color: role === 'lecturer' ? '#fff' : 'var(--text-secondary)',
                       cursor: 'pointer',
                       fontWeight: 600,
                       transition: 'all var(--transition-fast)'
-                    }}
+                        }}
                   >
                     Lecturer
                   </button>

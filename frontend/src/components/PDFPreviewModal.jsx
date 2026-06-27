@@ -14,7 +14,7 @@ export default function PDFPreviewModal({ document, onClose, onDownload }) {
       left: 0,
       right: 0,
       bottom: 0,
-      backgroundColor: 'rgba(5, 8, 16, 0.85)',
+      backgroundColor: 'rgba(15, 23, 42, 0.65)',
       backdropFilter: 'blur(8px)',
       zIndex: 1000,
       display: 'flex',
@@ -32,8 +32,8 @@ export default function PDFPreviewModal({ document, onClose, onDownload }) {
           display: 'flex',
           flexDirection: 'column',
           overflow: 'hidden',
-          border: '1px solid rgba(255, 255, 255, 0.15)',
-          boxShadow: '0 24px 64px rgba(0, 0, 0, 0.8)',
+          border: '2px solid var(--border-color)',
+          boxShadow: 'var(--shadow-lg)',
           transform: 'none' // disable list item translates
         }}
       >
@@ -43,12 +43,12 @@ export default function PDFPreviewModal({ document, onClose, onDownload }) {
           justifyContent: 'space-between',
           alignItems: 'center',
           padding: '16px 24px',
-          borderBottom: '1px solid var(--border-color)',
-          background: 'rgba(22, 31, 48, 0.4)'
+          borderBottom: '2px solid var(--border-color)',
+          background: '#ffffff'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <div style={{
-              background: 'rgba(99, 102, 241, 0.15)',
+              background: 'rgba(79, 70, 229, 0.08)',
               color: 'var(--color-primary)',
               padding: '8px',
               borderRadius: '8px',
@@ -57,11 +57,11 @@ export default function PDFPreviewModal({ document, onClose, onDownload }) {
               <FileText size={20} />
             </div>
             <div>
-              <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#fff', marginBottom: '2px' }}>
+              <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '2px' }}>
                 {document.title}
               </h3>
               <p style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>
-                Course: <span style={{ color: '#fff' }}>{document.course}</span> &bull; Uploaded by {document.uploaderName}
+                Course: <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{document.course}</span> &bull; Uploaded by {document.uploaderName}
               </p>
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function PDFPreviewModal({ document, onClose, onDownload }) {
             <button 
               onClick={onClose}
               style={{
-                background: 'rgba(255, 255, 255, 0.05)',
+                background: 'rgba(0, 0, 0, 0.05)',
                 border: 'none',
                 color: 'var(--text-secondary)',
                 cursor: 'pointer',
@@ -97,11 +97,11 @@ export default function PDFPreviewModal({ document, onClose, onDownload }) {
                 transition: 'all var(--transition-fast)'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(239, 68, 68, 0.2)';
-                e.currentTarget.style.color = '#ff8080';
+                e.currentTarget.style.background = 'rgba(239, 68, 68, 0.1)';
+                e.currentTarget.style.color = 'var(--color-danger)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                e.currentTarget.style.background = 'rgba(0, 0, 0, 0.05)';
                 e.currentTarget.style.color = 'var(--text-secondary)';
               }}
               title="Close Preview"

@@ -243,13 +243,14 @@ export default function Dashboard({ user, token, apiBase }) {
   return (
     <div className="container" style={{ padding: '40px 24px', flex: 1 }}>
 
-      {/* Welcome Hero Panel */}
       <div className="glass-card animate-fade-in" style={{
         padding: '30px 40px',
         marginBottom: '40px',
         position: 'relative',
         overflow: 'hidden',
-        background: 'linear-gradient(135deg, rgba(22, 31, 48, 0.8) 0%, rgba(99, 102, 241, 0.05) 100%)',
+        background: '#ffffff',
+        border: '2px solid var(--border-color)',
+        boxShadow: 'var(--shadow-md)',
         transform: 'none'
       }}>
         <div style={{ position: 'relative', zIndex: 2 }}>
@@ -262,7 +263,7 @@ export default function Dashboard({ user, token, apiBase }) {
           }}>
             Dashboard
           </span>
-          <h2 style={{ fontSize: '30px', fontWeight: 800, marginTop: '4px', marginBottom: '8px', color: '#fff' }}>
+          <h2 style={{ fontSize: '30px', fontWeight: 800, marginTop: '4px', marginBottom: '8px', color: 'var(--text-primary)' }}>
             Welcome back, {user.name}!
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '15px', maxWidth: '600px' }}>
@@ -311,7 +312,7 @@ export default function Dashboard({ user, token, apiBase }) {
 
               {/* Left Side: Upload Box */}
               <div>
-                <h3 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px', color: '#fff', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <h3 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <Plus size={18} style={{ color: 'var(--color-primary)' }} />
                   <span>Upload Document</span>
                 </h3>
@@ -320,10 +321,10 @@ export default function Dashboard({ user, token, apiBase }) {
                   {uploadError && (
                     <div style={{
                       padding: '10px 14px',
-                      background: 'rgba(239, 68, 68, 0.1)',
-                      border: '1px solid rgba(239, 68, 68, 0.25)',
+                      background: 'rgba(239, 68, 68, 0.08)',
+                      border: '1px solid rgba(239, 68, 68, 0.18)',
                       borderRadius: '8px',
-                      color: '#fca5a5',
+                      color: 'var(--color-danger)',
                       fontSize: '13px',
                       marginBottom: '16px'
                     }}>
@@ -333,10 +334,10 @@ export default function Dashboard({ user, token, apiBase }) {
                   {uploadSuccess && (
                     <div style={{
                       padding: '10px 14px',
-                      background: 'rgba(16, 185, 129, 0.1)',
-                      border: '1px solid rgba(16, 185, 129, 0.25)',
+                      background: 'rgba(16, 185, 129, 0.08)',
+                      border: '1px solid rgba(16, 185, 129, 0.18)',
                       borderRadius: '8px',
-                      color: '#a7f3d0',
+                      color: 'var(--color-success)',
                       fontSize: '13px',
                       marginBottom: '16px'
                     }}>
@@ -392,8 +393,8 @@ export default function Dashboard({ user, token, apiBase }) {
                         style={{
                           border: '2px dashed',
                           borderColor: dragActive ? 'var(--color-primary)' : uploadFile ? 'var(--color-success)' : 'var(--border-color)',
-                          background: dragActive ? 'rgba(99, 102, 241, 0.05)' : uploadFile ? 'rgba(16, 185, 129, 0.02)' : 'rgba(15, 23, 42, 0.4)',
-                          borderRadius: '12px',
+                          background: dragActive ? 'rgba(79, 70, 229, 0.05)' : uploadFile ? 'rgba(16, 185, 129, 0.02)' : 'rgba(0, 0, 0, 0.01)',
+                          borderRadius: 'var(--radius-md)',
                           padding: '24px 16px',
                           textAlign: 'center',
                           cursor: 'pointer',
@@ -418,7 +419,7 @@ export default function Dashboard({ user, token, apiBase }) {
                         />
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
                           <div style={{
-                            background: uploadFile ? 'rgba(16, 185, 129, 0.15)' : 'rgba(255, 255, 255, 0.03)',
+                            background: uploadFile ? 'rgba(16, 185, 129, 0.1)' : 'rgba(0, 0, 0, 0.03)',
                             color: uploadFile ? 'var(--color-success)' : 'var(--text-secondary)',
                             padding: '10px',
                             borderRadius: '50%',
@@ -429,7 +430,7 @@ export default function Dashboard({ user, token, apiBase }) {
 
                           {uploadFile ? (
                             <div>
-                              <p style={{ fontSize: '13px', fontWeight: 600, color: '#fff', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '300px' }}>
+                              <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '300px' }}>
                                 {uploadFile.name}
                               </p>
                               <p style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
@@ -438,7 +439,7 @@ export default function Dashboard({ user, token, apiBase }) {
                             </div>
                           ) : (
                             <div>
-                              <p style={{ fontSize: '13px', color: '#fff', fontWeight: 500 }}>
+                              <p style={{ fontSize: '13px', color: 'var(--text-primary)', fontWeight: 500 }}>
                                 Drag & drop PDF here
                               </p>
                               <p style={{ fontSize: '11px', color: 'var(--text-secondary)', marginTop: '2px' }}>
@@ -472,8 +473,8 @@ export default function Dashboard({ user, token, apiBase }) {
               {/* Right Side: Lecturer Documents Table */}
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#fff', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <HardDrive size={18} style={{ color: 'var(--color-secondary)' }} />
+                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <HardDrive size={18} style={{ color: 'var(--color-primary)' }} />
                     <span>My Uploaded Materials ({documents.filter(d => d.uploadedBy === user.id).length})</span>
                   </h3>
                   <button
@@ -509,12 +510,12 @@ export default function Dashboard({ user, token, apiBase }) {
                         {documents
                           .filter(d => d.uploadedBy === user.id)
                           .map((doc) => (
-                            <tr key={doc.id} style={{ borderBottom: '1px solid rgba(255,255,255,0.03)', fontSize: '14px' }}>
+                            <tr key={doc.id} style={{ borderBottom: '1px solid var(--border-color)', fontSize: '14px' }}>
                               <td style={{ padding: '16px' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                                   <div style={{
-                                    background: 'rgba(168, 85, 247, 0.1)',
-                                    color: 'var(--color-secondary)',
+                                    background: 'rgba(79, 70, 229, 0.08)',
+                                    color: 'var(--color-primary)',
                                     padding: '8px',
                                     borderRadius: '8px',
                                     display: 'flex'
@@ -522,7 +523,7 @@ export default function Dashboard({ user, token, apiBase }) {
                                     <FileText size={18} />
                                   </div>
                                   <div>
-                                    <p style={{ fontWeight: 600, color: '#fff' }}>{doc.title}</p>
+                                    <p style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{doc.title}</p>
                                     <p style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '2px' }}>
                                       {formatBytes(doc.fileSize)} &bull; {doc.originalName}
                                     </p>
@@ -531,7 +532,7 @@ export default function Dashboard({ user, token, apiBase }) {
                               </td>
                               <td style={{ padding: '16px' }}>
                                 <span style={{
-                                  background: 'rgba(255,255,255,0.05)',
+                                  background: 'var(--bg-main)',
                                   padding: '4px 10px',
                                   borderRadius: '6px',
                                   fontSize: '12px',
@@ -547,7 +548,7 @@ export default function Dashboard({ user, token, apiBase }) {
                               <td style={{ padding: '16px', textAlign: 'center' }}>
                                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                                   <BarChart2 size={14} style={{ color: 'var(--color-success)' }} />
-                                  <span style={{ fontWeight: 700, color: '#fff' }}>{doc.downloadCount || 0}</span>
+                                  <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{doc.downloadCount || 0}</span>
                                 </div>
                               </td>
                               <td style={{ padding: '16px', textAlign: 'right' }}>
@@ -692,9 +693,9 @@ export default function Dashboard({ user, token, apiBase }) {
                         {/* Course code & size */}
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
                           <span style={{
-                            background: 'rgba(99, 102, 241, 0.15)',
-                            color: '#a5b4fc',
-                            border: '1px solid rgba(99, 102, 241, 0.3)',
+                            background: 'rgba(79, 70, 229, 0.08)',
+                            color: 'var(--color-primary)',
+                            border: '1px solid rgba(79, 70, 229, 0.15)',
                             padding: '2px 10px',
                             borderRadius: '6px',
                             fontSize: '11px',
@@ -710,7 +711,7 @@ export default function Dashboard({ user, token, apiBase }) {
                         </div>
 
                         {/* Title */}
-                        <h4 style={{ fontSize: '17px', fontWeight: 700, color: '#fff', marginBottom: '8px', lineHeight: 1.3 }}>
+                        <h4 style={{ fontSize: '17px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '8px', lineHeight: 1.3 }}>
                           {doc.title}
                         </h4>
 
@@ -738,7 +739,7 @@ export default function Dashboard({ user, token, apiBase }) {
 
                       {/* Uploader & Actions Footer */}
                       <div style={{
-                        borderTop: '1px solid rgba(255, 255, 255, 0.05)',
+                        borderTop: '1px solid var(--border-color)',
                         paddingTop: '14px',
                         marginTop: '12px',
                         display: 'flex',
@@ -747,7 +748,7 @@ export default function Dashboard({ user, token, apiBase }) {
                       }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '12px' }}>
                           <div style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>
-                            By <span style={{ color: '#fff' }}>{doc.uploaderName}</span>
+                            By <span style={{ color: 'var(--text-primary)' }}>{doc.uploaderName}</span>
                           </div>
                           <div style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
                             <Calendar size={11} />
@@ -775,10 +776,10 @@ export default function Dashboard({ user, token, apiBase }) {
                               display: 'flex',
                               gap: '6px',
                               height: '36px',
-                              background: 'linear-gradient(135deg, var(--color-success) 0%, #047857 100%)',
-                              boxShadow: '0 4px 10px rgba(16, 185, 129, 0.2)'
+                              background: 'var(--grad-brand)',
+                              boxShadow: '0 4px 10px rgba(79, 70, 229, 0.2)'
                             }}
-                            onMouseEnter={(e) => e.currentTarget.style.filter = 'brightness(1.1)'}
+                            onMouseEnter={(e) => e.currentTarget.style.filter = 'brightness(1.05)'}
                             onMouseLeave={(e) => e.currentTarget.style.filter = 'none'}
                           >
                             <Download size={14} />
