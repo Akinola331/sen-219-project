@@ -5,7 +5,7 @@ export default function PDFPreviewModal({ document, onClose, onDownload }) {
   if (!document) return null;
 
   // Static url for previewing the PDF
-  const previewUrl = `http://localhost:5000/uploads/${document.filename}`;
+  const previewUrl = `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'}/uploads/${document.filename}`;
 
   return (
     <div style={{

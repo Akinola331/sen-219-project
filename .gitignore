@@ -5,3 +5,4 @@
 /backend/node_modules
 /.vscode
 sample_lecture_notes.pdf
+/frontend/.env
